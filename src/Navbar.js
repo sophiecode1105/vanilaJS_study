@@ -1,9 +1,11 @@
 class NavBar extends HTMLElement {
-  constructor() {
+  constructor(parent) {
     super();
+    this.parent = parent;
     this.state = {
       titleButtons: ["타이틀1", "타이틀2", "타이틀3", "타이틀4", "타이틀5"],
     };
+    this.parent.appendChild(this);
     this.attachShadow({ mode: "open" });
     this.render();
   }
